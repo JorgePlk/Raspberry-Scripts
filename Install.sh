@@ -19,6 +19,6 @@ apt dist-upgrade -y
 
 ## Instaling LAMP
 echo "Instaling LAMP"
-wget "https://raw.githubusercontent.com/JorgePlk/Raspberry-Scritps/master/LAMP.sh"
+wget https://raw.githubusercontent.com/JorgePlk/Raspberry-Scritps/master/LAMP.sh
 bash LAMP.sh
 rm LAMP.sh
