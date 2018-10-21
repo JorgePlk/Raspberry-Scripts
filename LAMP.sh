@@ -26,4 +26,5 @@ echo "DONE"
 ## Installing phpMyAdmin
 echo "Installing phpMyAdmin"
 apt install phpmyadmin
+ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 echo "DONE"
