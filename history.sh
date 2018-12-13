@@ -1,5 +1,4 @@
-﻿#! /bin/bash
-
+#! /bin/bash
 apt-get install libxml2 libxml2-dev libxml2-utils;
 apt-get install libaprutil1 libaprutil1-dev;
 ln -s /usr/lib/x86_64-linux-gnu/libxml2.so.2 /usr/lib/libxml2.so.2;
@@ -15,15 +14,11 @@ cp -R SpiderLabs-owasp-modsecurity-crs-*/* /etc/modsecurity/;
 rm SpiderLabs-owasp-modsecurity-crs.tar.gz;
 rm -R SpiderLabs-owasp-modsecurity-crs-* ;
 mv /etc/modsecurity/modsecurity_crs_10_setup.conf.example /etc/modsecurity/modsecurity_crs_10_setup.conf;
-
 cd /etc/modsecurity/base_rules;
-
 for f in * ; do   ln -s /etc/modsecurity/base_rules/$f /etc/modsecurity/activated_rules/$f ;  done
 cd /etc/modsecurity/optional_rules;
 for f in * ; do   ln -s /etc/modsecurity/optional_rules/$f /etc/modsecurity/activated_rules/$f ;  done
-
 gedit /etc/modsecurity/modsecurity.conf;
-
 echo "testear";
 a2enmod headers;
 a2enmod security2;
@@ -38,4 +33,3 @@ chown www-data:www-data /var/log/mod_evasive/;
 gedit /etc/apache2/mods-available/evasive.conf;
 a2enmod evasive ;
 /etc/init.d/apache2 restart;
-
