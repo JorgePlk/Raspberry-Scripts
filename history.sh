@@ -13,15 +13,15 @@ cp -R SpiderLabs-owasp-modsecurity-crs-*/* /etc/modsecurity/;
 rm SpiderLabs-owasp-modsecurity-crs-2.2.9-40-g0475e92.tar.gz;
 rm -R SpiderLabs-owasp-modsecurity-crs-* ;
 mv /etc/modsecurity/modsecurity_crs_10_setup.conf.example /etc/modsecurity/modsecurity_crs_10_setup.conf;
-for f in /etc/modsecurity/base_rules/* ; do   ln -s /etc/modsecurity/base_rules/$f /etc/modsecurity/activated_rules/$f ;  done
-for f in /etc/modsecurity/optional_rules/* ; do   ln -s /etc/modsecurity/optional_rules/$f /etc/modsecurity/activated_rules/$f ;  done
+for f in /etc/modsecurity/base_rules/* ; do   ln -s /etc/modsecurity/base_rules/$f /etc/modsecurity/activated_rules/$f ;  done;
+for f in /etc/modsecurity/optional_rules/* ; do   ln -s /etc/modsecurity/optional_rules/$f /etc/modsecurity/activated_rules/$f ;  done;
 gedit /etc/modsecurity/modsecurity.conf;
 echo "testear";
 a2enmod headers;
 a2enmod security2;
 /etc/init.d/apache2 restart;
 gedit /etc/apache2/apache2.conf;
-gedit/etc/modsecurity/modsecurity.conf;
+gedit /etc/modsecurity/modsecurity.conf;
 apache2ctl configtest;
 /etc/init.d/apache2 restart;
 apt-get install libapache2-mod-evasive;
